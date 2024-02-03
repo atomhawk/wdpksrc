@@ -104,18 +104,18 @@ jobs:
           name: ${{ steps.make_apkg.outputs.pkg }}_${{ steps.make_apkg.outputs.version }}_OS5
           path: wdpk/*_*_*.bin
 
-      - name: Publish packages to CloudSmith
-        id: push
-        uses: cloudsmith-io/action@master
-        with:
-          api-key: ${{ secrets.CLOUDSMITH_API_KEY }}
-          command: 'push'
-          format: 'raw'
-          owner: 'wd-community'        # Your Cloudsmith account name or org name (namespace)
-          repo: ${{matrix.model}}      # Your Cloudsmith Repository name (slug)
-          file: ./wdpk/${{steps.make_apkg.outputs.pkg}}_${{steps.make_apkg.outputs.version}}_${{matrix.model}}.bin     # Name of file
-          name: ${{steps.make_apkg.outputs.pkg}}              # Name for Raw package
-          summary: ${{ github.sha }}                          # Optional Summary for Raw Package
-          description: ${{steps.make_apkg.outputs.description}}   # Optional description for Raw package
-          version: ${{steps.make_apkg.outputs.version}}
-          republish: "true"
+#      - name: Publish packages to CloudSmith
+#        id: push
+#        uses: cloudsmith-io/action@master
+#        with:
+#          api-key: ${{ secrets.CLOUDSMITH_API_KEY }}
+#          command: 'push'
+#          format: 'raw'
+#          owner: 'wd-community'        # Your Cloudsmith account name or org name (namespace)
+#          repo: ${{matrix.model}}      # Your Cloudsmith Repository name (slug)
+#          file: ./wdpk/${{steps.make_apkg.outputs.pkg}}_${{steps.make_apkg.outputs.version}}_${{matrix.model}}.bin     # Name of file
+#          name: ${{steps.make_apkg.outputs.pkg}}              # Name for Raw package
+#          summary: ${{ github.sha }}                          # Optional Summary for Raw Package
+#          description: ${{steps.make_apkg.outputs.description}}   # Optional description for Raw package
+#          version: ${{steps.make_apkg.outputs.version}}
+#          republish: "true"
