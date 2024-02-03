@@ -31,20 +31,6 @@ jobs:
     strategy:
       matrix:
        include:
-        - model: EX4100
-          platform: WDMyCloudEX4100
-        - model: DL4100
-          platform: WDMyCloudDL4100
-        - model: EX2100
-          platform: WDMyCloudEX2100
-        - model: DL2100
-          platform: WDMyCloudDL2100
-        - model: MirrorG2
-          platform: WDMyCloudMirror
-        - model: EX2Ultra
-          platform: MyCloudEX2Ultra
-        - model: PR4100
-          platform: MyCloudPR4100
         - model: PR2100
           platform: MyCloudPR2100
 
