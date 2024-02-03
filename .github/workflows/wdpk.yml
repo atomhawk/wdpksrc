@@ -11,8 +11,8 @@ name: WD MyCloud package CI
 # events but only for the master branch
 on:
   push:
-    types: [ synchronize ]
-    branches: [ master ]
+ #   types: [ synchronize ]
+    branches: [ "master" ]
     paths:
       - wdpk/**
 
